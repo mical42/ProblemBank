@@ -1,0 +1,9 @@
+> JS function that verifies that a file is in the correct database format
+Input: "problem object"
+Output: Boolean. True if the file is in the right format; false otherwise.
+> Testing local functions: make sure that this runs locally
+> Make sample problems
+> Display function
+Input: list of problem objects
+Output: run it through mathjax
+

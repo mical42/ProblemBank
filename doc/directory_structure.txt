@@ -1,0 +1,6 @@
+The database format is:
+db
+db/problems
+db/problems/<PROBLEM_ID>for each problem, where <PROBLEM_ID> is the PROBLEM_ID of the problem, as defined in the metadata block
+db/problems/<PROBLEM_ID>/<UNIQUE_ID>.tex for each variation of a problem, where <UNIQUE_ID> is as defined in the metadata block
+All images and other resources for variations of a problem are stored in that problem's directory
