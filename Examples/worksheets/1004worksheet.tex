@@ -1,0 +1,148 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,verbatim}
+\printanswers
+\newcommand{\limi}[2]{\lim\limits_{{#1}\rightarrow{#2}}}
+\begin{document}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Math 221}{Worksheet}{October 4, 2018}
+\runningheader{}{}{}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+	\begin{questions}	
+		\question Assume that $f(x)$ is a differentiable function and that
+the values of $f(x)$ and its derivative at the points $x=0,1,2$, and
+$3$ are given by:
+
+\begin{align*}
+f(0)&=3 &
+ f'(0)&=-1 &
+f(1)&=5 &
+ f'(1)&=0 \\
+f(2)&=-2 &
+ f'(2)&=3 &
+f(3)&=6 &
+ f'(3)&=1.
+\end{align*}
+ 
+ 
+ Let $g(x)=x^2-3x+2$.  For each function below, calculate the
+derivative at the given point.
+
+\begin{parts}
+    
+\part  \( f(x)+g(x);\quad x=0 \)
+\begin{solution}[3cm]
+			\end{solution}
+\part  \( \frac{f(x)}{ g(x)};\quad x=1 \)
+\begin{solution}[3cm]
+			\end{solution}
+\part  \( f(x)g(x);\quad x=2 \)
+\begin{solution}[3cm]
+\end{solution}
+
+%%%%Commented out, not part of worksheet	
+%	\part  \( \frac{f(x)g(x)}{ f(x)+g(x)};\quad x=3 \)
+%\begin{solution}[3cm]
+%			\end{solution}
+%\part \( f(g(x));\quad x=0 \)
+%\begin{solution}[3cm]
+%\end{solution}
+
+	\part  \( f(g(x));\quad x=1 \)
+\begin{solution}[3cm]
+			\end{solution}
+%%%%Commented out, not part of worksheet
+%\part  \( g(f(x));\quad x=2 \)
+%\begin{solution}[3cm]
+%			\end{solution}
+	
+	\part  \( g(f(x));\quad x=3 \)
+\begin{solution}[3cm]
+			\end{solution}
+\end{parts}
+
+\question
+	Suppose we are given a function $f(x)$ satisfying the equation below for all $x$. Solve for $f'(x)$ in terms of $x, f(x)$.
+	\begin{parts}
+		\part $f(x) ^3 -x + 3 = 0$.
+\begin{solution}[3cm]
+			\end{solution}
+
+		\part $f(x) ^2 - \sqrt{x} = f(x)$.
+\begin{solution}[3cm]
+			\end{solution}
+
+%%%%Commented out, not part of worksheet
+		%\part $f(x) + 2x^2 f(x)^3 = \sqrt{f(x)}$.
+%\begin{solution}[3cm]
+%			\end{solution}
+
+	\end{parts}
+
+	\question
+Find $\frac{dy}{dx}$ for each equation.
+        \begin{parts}
+        \part $(x-y)^2=x+y-1$
+\begin{solution}[2cm]
+	\[\frac d{dx}\Big((x-y)^2\Big)=\frac d{dx}(x+y-1)\]
+            \[2(x-y)\cdot\left(1-\frac{dy}{dx}\right)=1+\frac{dy}{dx}\]
+            \[2x-2x\frac{dx}{dy}-2y+2y\frac{dy}{dx}=1\frac{dy}{dx}\]
+            \[\frac{dy}{dx}=\frac{2y-2x+1}{2y-2x-1}\]
+\end{solution}
+        \part $\cos^2x+\cos^2y=\cos(2x+2y)$
+\begin{solution}[2cm]
+	\[\frac{d}{dx}(\cos^2x+\cos^2y)=\frac{d}{dx}\cos(2x+2y)\]
+            \[2\cos x\cdot\sin x+2\cos y\cdot\sin y\cdot\frac{dy}{dx}=\sin(2x+2y)\cdot(2+2\frac{dy}{dx})\]
+            \[2\cos x\sin x+2\cos y\sin y\frac{dy}{dx}=2\sin(2x+2y)+2\frac{dy}{dx}\sin(2x+2y)\]
+        \[\frac{dy}{dx}=\frac{\cos x\sin x-\sin(2x+2y)}{\sin(2x+2y)-\cos y\sin y}\]
+\end{solution}
+        \end{parts}
+
+	\question
+Find the equation of the tangent line to the curve at the given point
+\begin{parts}
+		    \part $x^2+xy+y^2=3$ at $(1,1)$
+\begin{solution}[3cm]
+\[\frac d{dx}(x^2+xy+y^2)=\frac d{dx}3\]
+        \[2x+x\frac{dy}{dx}+1y+2y\frac{dy}{dx}=0\]
+        We are only interested in the slope at a certain point, so instead of solving for $\frac{dy}{dx}$ now, it's easier to substitute the point $(1,1)$ in now, and solve for the slope. We'll change $\frac{dy}{dx}$ to $m$ to signify that it's the slope at a certain point.
+        
+        \[2(1)+1m+1(1)+2(1)m=0\]
+        \[3+3m=0\]
+        \[m=-1\]
+        
+        So the equation of the tangent line is \[y-1=-1(x-1)\]
+\end{solution}
+			\part $y = \frac{2}{\sin x + \cos x}$ at $(0,1)$
+\begin{solution}[3cm]
+	$y' = \frac{-2}{(\sin x + \cos x)^2} \cdot (\cos x - \sin x)$. Thus $y' (0) = \frac{-2}{1} \cdot 1 = -2$.
+    
+    The equation of the tangent line is then $y-1 = -2 x$.
+\end{solution}
+		%	\part $y = x \tan x$. at $(\pi/4, \pi/4)$.
+		\end{parts}
+
+%%%%Commented out, not part of worksheet
+%		\question
+%        We will use implicit differentiation to find $\frac{d^2y}{dx^2}$ when $y^3+x^3=1$.
+%        \begin{parts}
+%            \part Use implicit differentiation to find $\frac{dy}{dx}$ in terms of $x$ and $y$.
+%\begin{solution}[3cm]
+%	$\frac{dy}{dx}=-\frac{x^2}{y^2}$
+%\end{solution}
+%            \part Differentiate both sides to find $\frac{d^2y}{dx^2}$ in terms of $x$, $y$, and $\frac{dy}{dx}$.
+%\begin{solution}[3cm]
+%	$\frac{d^2y}{dx^2}=-\frac{2xy^2-x^22y\frac{dy}{dx}}{y^4}=\frac{x^22y\frac{dy}{dx}-2xy^2}{y^4}$
+%\end{solution}
+%            \part Substitute your calculation for $\frac{dy}{dx}$ to get $\frac{d^2y}{dx^2}$ in terms of $x$ and $y$ only.
+%\begin{solution}[3cm]
+%	$\frac{d^2y}{dx^2}=\frac{x^22y\left(-\frac{x^2}{y^2}\right)-2xy^2}{y^4}=\frac{-x^4-2xy^3}{y^5}$
+%\end{solution}
+%        \end{parts}
+
+	\end{questions}
+\end{document}

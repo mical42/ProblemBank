@@ -1,0 +1,101 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,verbatim}
+%\usepackage{graphicx}
+\printanswers
+\newcommand{\limi}[2]{\lim\limits_{{#1}\rightarrow{#2}}}
+\begin{document}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Math 221}{Worksheet}{December 4, 2018}
+\runningheader{}{}{}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+	\begin{questions}
+		\question Find the area of the region bounded by the curves $y^2  = 2 x + 3$ and $y=x -6$. (Hint: integrate in $y$.)
+		\begin{solution}[4cm]
+			We express $x$ in terms of $y$: the first curve is given by $x = \frac{y^2 - 3}{2}$ and the second is given by $x = y+6$. Solving for the points of intersection, we get $y+6 = \frac{1}{2} [y^2 - 3] \Leftrightarrow 2y+12 = y^2 - 3 $. This has solutions $y = -3, 5$.
+
+			To figure out which curve is right-most (since the $x$-axis is pointing to our right), plug in $y=0$ to get $x=-3/2$ for the first curve, and $x=6$ for the second curve. Thus, the second curve is right-most. Hence the integral we must evaluate is
+			$\int\limits_{-3}^5 y+6 - \frac{y^2 - 3}{2} dy = \frac{y^2}{2} + 6y - y^3 / 3 - 3/2 y \Big|_{-3}^5 = 25/2 + 30 - 125/3 - 15/2 - (9/2 -18+27/3 + 9/2)= \ldots = 128/3$. 
+
+		\end{solution}
+
+		\question Consider the region above the function $y=\sqrt x$, below $y=2$, and bounded by $x=0$. In this problem, we will be finding the volume of the solid produced by revolving this region around several different lines, using the washer method. 
+
+            \begin{parts}
+
+            \part Sketch the region. Find and label the point where $y=\sqrt x$ and $y=2$ meet.
+\begin{solution}[2.75cm]
+	$x=4$
+			\end{solution}
+            \part First, we will rotate about the x-axis. What is the outer radius of this solid? What is the inner radius? Set up the integral for the volume.
+\begin{solution}[2cm]
+	$r_{out} (x) = 2$, $r_{in} (x) = \sqrt{x}$. The integral for the volume is given by $\int\limits_{0}^2 \pi (2^2 - \sqrt{x} ^2) dx = \int\limits_{0}^2 \pi (4 - x) dx$
+			\end{solution}
+		    \part Next, we will rotate about the line $y=3$. Again, what is the outer radius of this solid? What is the inner radius? Set up the integral for the volume. (You don't need to compute the volume.)
+\begin{solution}[2cm]
+	$r_{out} (x) = 3 - \sqrt{x}$ and $r_{in} (x) = 1$. The integral is $\int\limits_{0}^2 \pi ( (3 - \sqrt{x})^2 - 1^2) dx$
+			\end{solution}
+            \part Consider rotating about the line $x=-1$.  Again, what is the outer radius of this solid? What is the inner radius? Set up the integral.
+\begin{solution}[2cm]
+	Since we're rotating around a vertical line, we want to add up the area slices with respect to height, so we want the outer and inner radii in terms of $y$.
+
+	$r_{in} (y) = 1$ and $r_{out} (y) = y^2 + 1$. The integral is then $\int\limits_{0}^4 \pi ( (y^2+1)^2 - 1^2) dy$.
+			\end{solution}
+            \part Finally, consider rotating about the line $x=6$. What is the outer radius of this solid? What is the inner radius? Set up the integral.
+\begin{solution}[2cm]
+	$r_{out} = 6$ and $r_{in} = 6-y^2$. The integral is $\int\limits_{0}^4 \pi ( 36 - (6-y^2)^2) dy$.
+			\end{solution}
+            \end{parts}
+
+	    \question Consider the region between the functions $y=x^2$ and $y=3x-2$. In this problem, we will be finding the volume of the solid produced by revolving this region around several different lines, using the washer method. 
+
+        \begin{parts}
+
+        \part Sketch the region, and find the points where $y=x^2$ and $y=3x-2$ intersect.
+\begin{solution}[2.75cm]
+	$x^2 = 3x - 2 \Leftrightarrow x^2 - 3x + 2 = 0 \Leftrightarrow (x-1)(x-2) =0$, so $x=1$ and $x=2$ are their points of intersection.
+			\end{solution}
+        \part First, we will rotate about the line $y=1$. What is the outer radius of this solid? The inner radius? Set up the integral.
+\begin{solution}[2cm]
+	Notice the top function is $y = 3x - 2$, the bottom is $y=x^2$. We get $r_{in} (x) = x^2 - 1$ and $r_{out} = 3x - 2 - 1 = 3x - 3$. The integral is $\int\limits_{1}^2 \pi ( (3x-3)^2 - (x^2 - 1)^2) dx$
+			\end{solution}
+        \part Next, we will rotate about the line $y=6$. What is the outer radius of this solid? The inner radius? Set up the integral.
+\begin{solution}[2cm]
+	$r_{in} = 6 - (3x-2) = 8 - 3x$ and $r_{out} = 6 - x^2$. The integral is $\int\limits_0 ^1 \pi ( (6-x^2)^2 - (8-3x)^2 ) dx$
+			\end{solution}
+        \part Consider rotating about the line $x=-1$. What is the outer radius of this solid? The inner radius? Set up the integral.
+\begin{solution}[2cm]
+	Let's express both the functions in terms of $y$: $y = 3x - 2$ is equivalent ot $x = \frac{y+2}{3}$ and $y=x^2$ is equivalent to $x = \sqrt{y}$ (since only concerned with $1 \leq x \leq 2$).
+
+	Then $r_{in} = 1 + \frac{y+2}{3}$ and $r_{out} = 1+ \sqrt{y}$. The integral is then $\int\limits_{1}^4 \pi ( (1+\sqrt{y})^2 - (1+ \frac{y+2}{3})^2) dy$
+			\end{solution}
+        \part Finally, consider rotating about the line $x=4$. What is the outer radius of this solid? The inner radius? Set up the integral.
+\begin{solution}[2cm]
+	$r_{in} = 4- \sqrt{y}$ and $r_{out} = 4- \frac{y+2}{3}$. The integral is $\int\limits_{1}^4 \pi ( (4- \frac{y+2}{3})^2 - (4- \sqrt{y})^2 ) dy$
+			\end{solution}
+        \end{parts} 
+
+	\question Consider the region between $y=0$ and $y=2$, and bounded by $x=0$ and $y=x-1$. 
+
+        \begin{parts}
+
+        \part Sketch the region. Find and label the points where $y=x-1$ intersects $y=0$ and $y=2$.
+\begin{solution}[2.75cm]
+	$y=x-1$ intersects $y=0$ at $x=1$ and $y=2$ at $x=3$.
+			\end{solution}
+        \part First, we will rotate this region about the line $y=-2$. What is the outer radius of this solid? What is the inner radius? Set up the integral for the volume.
+\begin{solution}[2cm]
+	$r_{in} (x) = \begin{cases} 2 ~\text{ if } 0\leq x \leq 1 \\ 2 + (x-1) ~\text{ if } 1 \leq x \leq 3 \end{cases}$. $r_{out} (x) = 4$. The volume is given by $\int\limits_{0}^1 \pi ( 4^2 - 2^2) dx + \int\limits_{1}^3 \pi ( 4^2 - (2+ (x-1))^2 ) dx$
+			\end{solution}
+        \part Finally, we will rotate about the line $y=5$. What is the outer radius of this solid? The inner radius? Set up the integral for the volume.
+\begin{solution}
+	$r_{in} = 3$ and $r_{out} = \begin{cases} 5 ~\text{ if } 0 \leq x \leq 1 \\ 5 - (x-1) ~\text{ if } 1 \leq x \leq 3 \end{cases}$. The volume is given by $\int\limits_{0}^1 \pi ( 5^2 - 3^2) dx + \int\limits_{1}^3 \pi ( 5^2 - (5- (x-1))^2 ) dx$
+			\end{solution}
+        \end{parts}
+		%\question Find the volume of a pyramid with square base of length $4$ and height $12$.
+	\end{questions}
+\end{document}

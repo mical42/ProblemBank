@@ -1,0 +1,71 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,verbatim}
+\usepackage{graphicx}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\printanswers
+\newcommand{\limi}[2]{\lim\limits_{{#1}\rightarrow{#2}}}
+\begin{document}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Math 221}{Worksheet}{October 18, 2018}
+\runningheader{}{}{}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+	\begin{questions}
+		\question
+         Suppose $f(x)$ is a differentiable function with $f(1)=10$, and $f'(x)\geq 2$ for $1\leq x\leq 4$. Use the mean value theorem to find the smallest possible value of $f(4)$.
+		\begin{solution}[4cm]
+        The MVT tells us there is a point $c$ in the interval $(1,4)$ such that 
+        \[f'(c)=\frac{f(4)-f(1)}{4-1}\]
+        Simplifying the right hand side, we get \[\frac{f(4)-f(1)}{4-1}=\frac{f(4)-10}{3}\]
+        Now since we know that $f'(x)\geq2$ on this interval, in particlar we know that $f'(c)\geq2$. So we have \[2\leq f'(c)=\frac{f(4)-10}{3}\]
+        Solving this inequality for $f(4)$ we have \[2\leq\frac{f(4)-10}{3}\] 
+        \[6\leq f(4)-10\] \[16\leq f(4)\]
+        So the smallest possible value of $f(4)$ is 16. 
+        
+        (You could also draw a picture to figure this out).
+    \end{solution}
+		\question Does there exist a differentiable function $g(x)$ such that $g(0)=-1$, $g(2)=4$, and $g'(x)\leq 2$ for all $x$? Find an example or explain why it doesn't exist.
+		\begin{solution}[3.5cm]
+        If such a function existed, then by MVT we would have some $c$ in the interval $(0,2)$ such that \[g'(c)=\frac{g(2)-g(0)}{2-0}=\frac{4-(-1)}2=\frac52\]
+        This is impossible since $g'(x)\leq2$ for all $x$.
+    \end{solution}
+
+        \question Determine whether $f(x)$ satisfies the hypothesis of the mean value theorem on the given interval. If so, find all numbers $c$ in the interval so that $f(b)-f(a)=f'(c)(b-a)$.
+        \begin{parts}
+        \part $f(x)=\frac{1}{(x-1)^2}$, $[0,2]$
+		\begin{solution}[3.5cm]
+No, $f$ is not continuous on $[0,2]$
+		\end{solution}
+        \part $f(x)=x+\frac4x$, $[1,4]$
+		\begin{solution}[3.5cm]
+$c=2$
+
+		\end{solution}
+        \part $f(x)=4+\sqrt{x-1}$, $[1,5]$
+		\begin{solution}[3.5cm]
+$c=2$
+		\end{solution}
+  %      \part $f(x)=\sin x$, $[0,\frac{\pi}2]$
+%		\begin{solution}[3cm]
+%$c=\arccos\frac2{\pi}$
+%		\end{solution}
+	\end{parts}
+        
+	\question Explain why the Mean Value Theorem applies to the following statements.
+        \begin{parts}
+        \part If two runners start a race at the same time and finish at the same time, there be some point in the race where they have the same speed.
+		\begin{solution}[3cm]
+		\end{solution}
+        \part It is impossible to travel 50 miles in an hour without ever going 50 mph.
+\begin{solution}[3cm]
+		\end{solution}
+        \end{parts}
+
+	\end{questions}
+\end{document}

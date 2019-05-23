@@ -1,0 +1,93 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,verbatim}
+\printanswers
+\newcommand{\limi}[2]{\lim\limits_{{#1}\rightarrow{#2}}}
+\begin{document}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Math 221}{Worksheet 4}{September 20, 2018}
+\runningheader{}{}{}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+	\begin{questions}
+		\question Consider $f(x) =\begin{cases} -4x+2 \text{ for } x \neq -1 \\ 0 \text{ for } x = -1\end{cases}$. Note $\lim\limits_{x \to -1} f(x)= 6$. Recall the distance between two numbers $a,b$ is given by $|b-a|$. Let us say $x$ is a number not equal to $-1$.
+	\begin{parts}
+		\part How close does $x$ need to be to $-1$ so that $f(x)$ is at most $2$ away from $6$?
+		\begin{solution}[3cm]
+			$\frac{1}{2}$.
+		\end{solution}
+		\part How close does $x$ need to be to $-1$ so that $f(x)$ is at most $0.25$ away from $6$?
+		\begin{solution}[3cm]
+			$0.25/4$.
+		\end{solution}
+		\part How close does $x$ need to be to $-1$ so that $f(x)$ is at most $0.02$ away from $6$?
+		\begin{solution}[3cm]
+			$\frac{0.02}{4}$.
+		\end{solution}
+		\part How close does $x$ need to be to $-1$ so that $f(x)$ is at most $\epsilon$ away from $6$? (Your answer should be in terms of $\epsilon$)
+		\begin{solution}[3cm]
+			$\epsilon/4$.
+		\end{solution}	
+		\part Find $\delta$, in terms of $\epsilon$, so that when $0 < |x-(-1)|< \delta$, we have $|f(x) - 6| < \epsilon$.
+\begin{solution}[3cm]
+			$\epsilon/4$.
+		\end{solution}
+	\end{parts}
+		
+		\question
+		\begin{parts} 
+			\part Write down the $\epsilon$-$\delta$ meaning of $\lim\limits_{x \to a} f(x) = L$.
+			\begin{solution}[2cm]
+				This means that for each $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $0 < |x-a| < \delta$, we have $|f(x) - L| < \epsilon$.
+			\end{solution}
+			\part Consider the function $f(x) = \begin{cases} x^2 \text{ if } x \geq 0 \\ 2x - 1 \text{ if } x < 0 \end{cases}$. Show $\lim\limits_{x \to -2} f(x) = -5$, using the $\epsilon$-$\delta$ definition you wrote above.
+				\begin{solution}[5cm]
+					When $x < 0$, we have $f(x) = 2x-1$. Note that $|x-(-2)| \leq 1$ forces $x < 0$ (in fact we could have done $|x-(-2)| < 2$. Thus let us presuppose $\delta \leq 1$. Then $$|f(x) - (-5)| = |2x -1 +5| = |2x + 4| = 2|x+2| = 2|x-(-2)| < 2 \delta.$$ If we choose $\delta \leq \frac{\epsilon}{2}$, we get
+					$$|f(x) - (-5)| < 2 \delta \leq \epsilon.$$
+
+					Thus in our answer, we needed $\delta \leq \frac{\epsilon}{2}$ and $\delta \leq 1$. Let's set $\delta = \min \{\epsilon/2,1\}$. 
+				\end{solution}
+		\end{parts}
+		
+		\question Complete the following proof that $\lim\limits_{x \to -4} x^2 = 16$, i.e.\ that for every $\epsilon > 0$ there exists $\delta > 0$ such that if $0 < |x-(-4)| < \delta$ then $|x^2 - 16 | < \epsilon$.
+
+		\textit{Given $\epsilon > 0$, we make sure $\delta \leq 1$. Then $$|x^2 - 16| = |(x-4)(x- (-4))| = |x- (-4)| |x-4| < \delta |x-4|.$$}	
+		\textit{But if $0 < |x-(-4)| < \delta \leq 1$, then $-5 < x < -3$ and so $|x-4| < 9$.}
+
+		\textit{Thus $|x^2 - 16| < \delta |x-4| < 9 \delta$.}
+
+		\begin{solution}[4cm]
+			We want $|x^2 - 16| < \epsilon$. By the above, it suffices to have $9 \delta \leq \epsilon$, since then $|x^2 - 16| < 9 \delta \leq \epsilon$. So it suffices to have $9 \delta \leq \epsilon$, or $\delta \leq \frac{\epsilon}{9}$.
+
+			Therefore we need $\delta \leq \frac{\epsilon}{9}$ and $\delta \leq 1$. It suffices to take $\delta = \min \{\frac{\epsilon}{9},1\}$.
+		\end{solution}
+
+
+		\question Consider the function $f(x) = x^2 + x$. We will show $\lim\limits_{x \to 1} f(x) = 2$ using the $\epsilon$-$\delta$ definition of limit, meaning given $\epsilon > 0$ we will find a $\delta$, in terms of $\epsilon$, such that if $0< |x-1| < \delta$, then $|f(x) - 2| < \epsilon$. (Note: this will be different from how we did it in class.)
+		
+		To do this, we first assume $|x-1| < \delta$ for some $\delta$, and then figure out how small $\delta$ should be to make everything work out.
+		\begin{parts}
+			\part Let's simplify things algebraically and write $z = x-1$, so that $|z| < \delta$. Rewrite $f(x) - 2$ as a polynomial in terms of $z$, say $p(z)$. (Hint: you should get a quadratic formula with no constant term.)
+			\begin{solution}[3cm]
+				Note that $z = x-1$, or $x = z+1$
+				We have $f(x) - 2 = x^2 + x - 2$. Substituting with our formula for $x$, we get $(z+1)^2 + (z+1) - 2 = z^2 + 2z + 1 + z + 1 - 2 = z^3 + 3z$. So $P(z) = z^2 + 3z$
+			\end{solution}
+			\part If $|x-1| < \delta$, show $|f(x) - 2| \leq a\delta^2 + b\delta$ for some constants $a,b$ (Hint: use the previous question and the fact that $|c+d|\leq |c| + |d|$ for all reals $c,d$.)
+			\begin{solution}[3cm]
+				Recall $|z| = |x-1| < \delta$. Then $|f(x) -2| = |P(z)| = |z^2 + 3z|$. Using the hint, we have $|z^2 + 3z| \leq |z^2| + |3 z| = |z|^2 + 3|z|$. Since $|z| < \delta$, we then have $|z|^2 + 3|z| < \delta^2 + 3 \delta$. So the reasoning above gives $|f(x) -2| < \delta^2 + 3\delta$.
+			\end{solution}
+			\part Now like in lecture and in the text, let's suppose $\delta < 1$ (choosing a smaller $\delta$ does no harm). Use this and the previous part to show $|f(x) -2| < (a+b) \delta$, where $a,b$ are the same constants as above. (Hint: since $\delta < 1$, how does $\delta^2$ compare with $\delta$?)
+			\begin{solution}[3cm]
+				If $\delta < 1$, then using the hint we have $\delta^2 < \delta$. Thus from the question above, we have $|f(x) -2| < \delta^2 + 3\delta < \delta + 3 \delta = 4 \delta$.
+			\end{solution}
+			\part What should your $\delta$ be, in terms of $\epsilon$? (Hint: if $(a+b) \delta < \epsilon$, then it follows $|f(x) - 2| < \epsilon$.)
+			\begin{solution}[3cm]
+				In order for $|f(x) - 2 | < \epsilon$, note that by the above it suffices to have $4 \delta < \epsilon$, or $\delta < \epsilon / 4$. But we also assumed $\delta < 1$. So we need both $\delta < \epsilon /4$ and $\delta < 1$. So we need $\delta < \min (\epsilon/4, 1)$. A possible $\delta$ satisfying this would be $\delta = \frac{1}{2} \min (\epsilon/4, 1)$.
+			\end{solution}
+		\end{parts}
+
+	\end{questions}
+\end{document}

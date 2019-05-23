@@ -1,0 +1,98 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,verbatim}
+%\usepackage{graphicx}
+\printanswers
+\newcommand{\limi}[2]{\lim\limits_{{#1}\rightarrow{#2}}}
+\begin{document}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{Math 221}{Worksheet}{November 20, 2018}
+\runningheader{}{}{}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+	\begin{questions}
+		\question Compute the following quantities
+		\begin{parts}
+			\part $\frac{d}{dx} \ln |x^2 + 3x -5 |$.
+			\begin{solution}[3cm]
+				$\frac{1}{x^2 + 3x - 5} \cdot (2x + 3)$
+			\end{solution}
+			\part $\frac{d}{dt} e^{\sin (5t)}$.
+\begin{solution}[3cm]
+	$5 e^{\sin (5t)} \cos (5t)$
+			\end{solution}
+			\part $\frac{d}{dx} x^{\sin x}$ (Hint: $x  = e^{\ln x}$).
+\begin{solution}[3cm]
+	Note $x ^{\sin x} = (e^{\ln x})^{\sin x} = e^{ \sin x \ln x}$. Therefore $(x^{\sin x})'= (e^{\sin x \ln x})' = e^{\sin x \ln x} (\sin x \ln x)' = e^{\sin x \ln x} [\cos x \ln x + \frac{\sin x}{x}] = x^{\sin x} [\cos x \ln x + \frac{\sin x}{x}]$.
+			\end{solution}
+			\part $\frac{d}{dy} 10^{\sqrt{1-y^2}}$.
+\begin{solution}[3cm]
+	$(10^{sqrt{1-y^2}})' = (e^{\ln 10 \sqrt{1-y^2}})' = e^{\ln 10 \sqrt{1-y^2}} \cdot (\ln 10 \sqrt{1-y^2})' $ which equals $e^{\ln 10 \sqrt{1-y^2}} \ln 10 \frac{1}{2} (1-y^2)^{-1/2} \cdot (-2y)$, 
+			\end{solution}
+		\end{parts}
+
+\question Find the following integrals:
+
+\begin{parts}
+\part  \( \int _1^e\frac{1}{ x\sqrt{\ln x}}\,dx\qquad \)
+\begin{solution}[3cm]
+	Set $u = \ln x$, then $du = \frac{1}{x} dx$, so the integral becomes $\int\limits_{0}^{1} \frac{1}{\sqrt{u}} du = 2 \sqrt{u} \Big|_0^1 = 2$.
+			\end{solution}
+	\part  \( \int_0^{\pi/4}\frac{\sin x}{\cos^2 x}\,dx \)
+\begin{solution}[3cm]
+	Set $u = \cos x$, then $du = - \sin x dx$, so we get $- \int\limits_1 ^{1/\sqrt{2}} u^{-2} du = u^{-1} \Big|_1 ^{1/\sqrt{2}} = \sqrt{2} - 1$.
+			\end{solution}
+	\part  \( \int_{e^2}^{e^3}\frac{1}{ x(1-\ln x)}\,dx\hskip1in \)
+\begin{solution}[3cm]
+	Set $u = 1 - \ln x$. Then $du = -1/x dx$, so we get $- \int\limits_{-1}^{-2} \frac{1}{u} du = - \ln |u| \Big|_{-1}^{-2} = - \ln 2 + \ln 1 = -\ln 2$ 
+			\end{solution}
+\part  \( \int_0^1x\sqrt{e^{x^2}}\,dx \)
+\begin{solution}[3cm]
+	Set $u = x^2$, so $du = 2x dx$. Then the integral becomes $\frac{1}{2} \int\limits_{0} ^1 \sqrt{e^{u}} du = \int\limits_0 ^1 \frac{e^{u/2}}{2} du = e^{u/2} \Big|_{0}^1 = e^{1/2}-1$.
+			\end{solution}
+\part  \( \int_0^1\frac{1}{\sqrt{e^x}}\,dx\hskip1in \)
+\begin{solution}[3cm]
+	Set $u = e^x$. Then $du = e^x dx = u dx$. Then $\int\limits_{0}^1 \frac{1}{\sqrt{e^x}} dx = \int\limits_{0}^1 \frac{e^x}{(e^{x})^{3/2}} dx = \int\limits_{1}^{e} u^{-3/2} du = \frac{u^{-1/2}}{-1/2} \Big|_{1}^e = -2/\sqrt{e} + 2$.
+\end{solution}
+\part  \( \int_0^4\frac{e^{\sqrt x}}{\sqrt x}\,dx \)
+\begin{solution}[3cm]
+	Set $u = \sqrt{x}$. Then $du = \frac{1}{2 \sqrt{x}} dx$, so the integral above becomes $2 \int\limits_{0}^2 e^u du = 2 e^{u} \Big|_0^2 = 2 e^2 - 2$.
+			\end{solution}
+\end{parts}
+
+
+\question Find all vertical and horizontal asymptotes of the following
+functions: 
+
+\begin{parts}
+\part  \( f(x)=\ln(x+2)-\ln(x+1) \)
+\begin{solution}[4cm]
+	First notice that $f$ has domain $(-1,\infty)$ (the input into $\ln$ must always be positive). On this domain, we may rewrite $f(x) = \ln \frac{x+2}{x+1}$. Then for the horizontal asymptote at $+\infty$, we have $\lim\limits_{x \to \infty} f(x) = \lim\limits_{x \to \infty} \ln  \frac{x+2}{x+1} = \ln \lim\limits_{x \to \infty} \frac{x+2}{x+1} = \ln 1 = 0$, since $\lim\limits_{x \to \infty} \frac{x+2}{x+1} = \lim\limits_{x \to \infty} \frac{1+ 2/x}{1+1/x} = \frac{1}{1}$.
+
+	For the vertical asymptotes, $f$ is continuous on $(-1,+\infty)$, so the only candidate for a vertical asymptote is $-1$.
+
+	$\lim\limits_{x \to -1^+} f(x) = \lim\limits_{x \to -1^+} \ln (x+2) - \ln (x+1) = \ln (1) - \lim\limits_{x \to -1^{+}} \ln (x+1) = -\lim\limits_{x \to -1^+} \ln (x+1) = - (-\infty) = + \infty$, so $f$ has a vertical asymptote at $x=-1$.
+			\end{solution}
+\part  \( h(x)=e^{-1/x^2} \)
+\begin{solution}[4cm]
+	This function has domain $(-\infty,0) \cup (0,+\infty)$. The only candidate for a vertical asymptote is $x=0$. But $\lim\limits_{x \to 0^{-}} e^{-1/x^2} = e^{\lim\limits_{x \to 0^{-}} -1/x^2} = e^{-1/(0^{-})^2} = e^{-1/0^+} = e^{-\infty} = 0$. Similarly, we get $\lim\limits_{x \to 0^+} e^{-1/x^2} = 0$. Thus $e^{-1/x^2}$ has no vertical asymptote at $x=0$, and hence no vertical asymptote.
+
+	For horizontal aysmptotes, $\lim\limits_{x \to -\infty} e^{-1/x^2} = e^{\lim\limits_{x \to -\infty} -1/x^2} = e^{0} = 1$. So the horizontal asymptote at $-\infty$ is the line $y=1$. Similarly, the horizontal asymptote at $+\infty$ is $y=0$ too.
+			\end{solution}
+\end{parts}
+
+
+\question Let $f(x)=x(\ln x)^2$ on the interval $ [e^{-4},e^1] $. Find all local and global extrema of $f$.
+\begin{solution}[6cm]
+	$f'(x) = (\ln x)^2 + 2 \ln x = \ln x (\ln x + 2)$. On the interval $[e^{-4}, e^{1}]$, $f'(x)$ is well defined everywhere, so the critical points are precisely when $f'(x) = 0$, i.e.\  $\ln x =0 \Leftrightarrow x =1$ or $\ln x + 2 = 0 \Leftrightarrow \ln x = -2 \Leftrightarrow x = e^{-2}$. Both critical points belong in $[e^{-4}, e^1]$.
+
+	Furthermore, $\ln x$ is an increasing function. Thus for $e^{-4} < x< 1$, we have $\ln x < 0$ and $1<x<e^1$, $\ln x > 0$. Similarly, $\ln x + 2 < 0$ when $e^{-4} < x< e^{-2}$ and $\ln x + 2 > 0$ when $e^{-2} < x< e^1$. Thus $f'(x) > 0$ for $e^{-4} < x < e^{-2}$, $f'(x) <0$ for $e^{-2} < x< 1$ and $f'(x) > 0$ for $1 < x< e^{1}$. Thus $e^{-2}$ is a local max and $1$ is a local min.
+
+	To find the absolute extrema on this interval, we plug in: $f(e^{-4}) = e^{-4} (-4)^2 = 16 e^{-4}$, $f(e^{-2}) = e^{-2} (-2)^2 = 4 e^{-2}$, $f(1) = 0$, $f(e^1) = e \cdot 1^2 = e$. We see that $f(1) = 0$ is the absolute min. By the reasoning from the first derivative, since $f$ is increasing from $e^{-4}$ to $e^{-2}$, we have $f(e^{-4}) < f(e^{-2})$. Since $2.5 < e$, we get $f(e^{-2}) = 4 e^{-2} < 4 /(2.5)^2 = (2/2.5)^2 < 1^2 < e = f(e^1)$, so $e^1$ is the absolute max, and $1$ is the absolute min.
+			\end{solution}
+	
+	\end{questions}
+\end{document}
