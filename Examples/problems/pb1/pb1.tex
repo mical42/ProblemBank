@@ -1,0 +1,47 @@
+\question Compute the following integrals (you may have to use $u$-substitution).
+		\begin{parts}
+			\part $\int x^5 \sin (x^6 + 9) dx$.
+\begin{solution}[3cm]
+	Set $u = x^6 + 9$, so that $\frac{du}{dx} = 6 x^5$, or $du = 6x^5 dx$. Thus $\int \sin (x^6 + 9) x^5 dx = \int \sin u \frac{du}{5} = \frac{-\cos(u)}{5} + C = \frac{-\cos (x^6 + 9}{5} + C$.
+			\end{solution}
+			\part $\int 12 x (x+3)^2 dx$.
+\begin{solution}[3cm]
+	$u = x+3$. Then $du = dx$. Then $\int 12 x (x+3)^2 dx = \int 12 (u-3) (u)^2 du =  \int 12 u^3 - 12 \cdot 3u^2 du = 3 u^4 - 12 u^3 + C = 3 (x+3)^4 - 12 (x+3)^3 + C$.
+			\end{solution}
+			\part $\int 90 t (t-7)^7 dt$.
+\begin{solution}[3cm]
+	$u = t-7$, so $du = dt$. We get $\int 90 t (t-7)^7 dt = \int 90 (u+7) (u)^7 du = \int 90 u^8 + 7 \cdot 90 u^7 du = 10 u^9 + \frac{7 \cdot 90}{8} u^8 + C = 10 (t-7)^9 + \frac{7 \cdot 90}{8} (t-7)^8$.
+			\end{solution}
+			\part $\int \sqrt{12y + 6} dy$.
+\begin{solution}[3cm]
+	$u= 12y + 6$, so $du = 12 dy$. Then we get $\int \sqrt{u} \frac{du}{12} = \frac{1}{12} \int u^{1/2} du = \frac{1}{12} \frac{u^{3/2}}{3/2} + C = \frac{u^{3/2}}{18}$.
+			\end{solution}
+			\part $\int y^{8} \sqrt{4 y^3 - 6} dy$. (Hint: try expressing your leftover $y$'s in terms of your choice of $u$).
+\begin{solution}[3cm]
+	$u = 4y^3 - 6$, so $du = 12 y^2 dy$. $\int \sqrt{4 y^3 -6} y^8 dy = \int \sqrt{u} y^6 \frac{du}{12} = \int \frac{\sqrt{u} (y^3)^2}{12} du = \int \frac{u^{1/2} (\frac{u+6}{4})^2 du = \int \frac{1}{16} u^{1/2} (u^2 + 12 u + 36) du = \frac{1}{16} [\frac{u^{7/2}}{7/2} + 12 \frac{u^{5/2}}{5/2} + 36 \frac{u^{3/2}}{3/2}] + C$
+			\end{solution}
+			\part $\int \frac{7x - 1}{7x^2 -2x + 3} dx$.
+\begin{solution}[3cm]
+			\end{solution}
+			\part $\int \cos x \sqrt{ \sin x} dx$.
+\begin{solution}[3cm]
+	
+			\end{solution}
+			\part $\int \cos^3 x dx$ (Hint: $\cos ^2 x = 1 - \sin ^2 x$).
+\begin{solution}[3cm]
+			\end{solution}
+			\part $\int\limits_0 ^{\pi} \frac{\sin x }{\cos ^2 x} dx$.
+\begin{solution}[3cm]
+			\end{solution}
+			\part $\int\limits_{0}^1 \frac{x}{\sqrt{2-x^2}} dx$.
+\begin{solution}[3cm]
+			\end{solution}
+			\part $\int\limits_{0}^2 (x-1)^{99} x dx$.
+\begin{solution}[3cm]
+			\end{solution}
+			\part $\int\limits_{1}^4 \frac{\sqrt{2 + \sqrt{x}}}{\sqrt{x}} dx$.
+\begin{solution}[3cm]
+			\end{solution}
+		\end{parts}
+	\end{questions}
+\end{document}
