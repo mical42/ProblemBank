@@ -2,7 +2,7 @@
 Input: "problem object"
 Output: Boolean. True if the file is in the right format; false otherwise.
 > Testing local functions: make sure that this runs locally
-> Make sample problems
+> Make sample problems (5-27-19 one sample created, but with no metadata)
 > Display function
 Input: list of problem objects
 Output: run it through mathjax
