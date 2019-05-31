@@ -1,0 +1,16 @@
+Server
+> file-line access to database
+--read
+--add files as new versions
+--select files by tags/build index file
+
+Client
+--get files
+--display cart
+--select by tag
+--upload file
+
+Communication:
+--"give me a file into JS string"
+--upload tex file
+--supplemental materials
