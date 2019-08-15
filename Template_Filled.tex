@@ -1,0 +1,40 @@
+\documentclass[12pt]{exam} %important to use the exam document class
+
+%package + macros; whatever is specific to your own worksheet to make it compile
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,verbatim}
+\usepackage{graphicx}
+\usepackage{array}
+
+\printanswers %this makes the solutions be printed; change to \noprintanswers to make it print blank space
+\begin{document}
+
+	\begin{questions} %starts the question environment; every question should be started by \question. 
+
+		\question Does there exist a differentiable function $g(x)$ such that $g(0)=-1$, $g(2)=4$, and $g'(x)\leq 2$ for all $x$? Find an example or explain why it doesn't exist.
+		
+		\begin{solution}[3.5cm] %denotes the beginning/end of a solution, with [3.5cm] specifying how much blank space to leave if \noprintanswers is put above
+        		
+			If such a function existed, then by MVT we would have some $c$ in the interval $(0,2)$ such that \[g'(c)=\frac{g(2)-g(0)}{2-0}=\frac{4-(-1)}2=\frac52\]
+        		This is impossible since $g'(x)\leq2$ for all $x$.
+		\end{solution}
+
+        	\question Determine whether $f(x)$ satisfies the hypothesis of the mean value theorem on the given interval. If so, find all numbers $c$ in the interval so that $f(b)-f(a)=f'(c)(b-a)$.
+        	\begin{parts} %If your question has several parts, after \question, use this to start a parts environment, where each part is begun by \part
+
+        		\part $f(x)=\frac{1}{(x-1)^2}$, $[0,2]$
+			\begin{solution}[3.5cm]
+			No, $f$ is not continuous on $[0,2]$
+			\end{solution}
+        		\part $f(x)=x+\frac4x$, $[1,4]$
+			\begin{solution}[3.5cm]
+				$c=2$
+			\end{solution}
+        		\part $f(x)=4+\sqrt{x-1}$, $[1,5]$
+			\begin{solution}[3.5cm]
+			$c=2$
+			\end{solution}
+		\end{parts}
+	\end{questions}
+\end{document}
